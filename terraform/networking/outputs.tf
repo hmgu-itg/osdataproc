@@ -14,6 +14,6 @@ output "worker_ips" {
   value = flatten(openstack_networking_port_v2.worker[*].all_fixed_ips)
 }
 
-output "floating_ip" {
-  value = local.create_ip ? openstack_networking_floatingip_v2.floating_ip[0].address : var.floating_ip
-}
+#output "floating_ip" {
+#  value = local.create_ip ? openstack_networking_floatingip_v2.floating_ip[0].address : var.floating_ip
+#}

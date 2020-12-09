@@ -17,3 +17,9 @@ output "worker_ips" {
 #output "floating_ip" {
 #  value = local.create_ip ? openstack_networking_floatingip_v2.floating_ip[0].address : var.floating_ip
 #}
+
+## Making this de.NBI compatible
+## Uncomment above and comment below to revert
+output "floating_ip" {
+value = flatten(openstack_networking_port_v2.master.all_fixed_ips)
+}

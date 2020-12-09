@@ -1,6 +1,6 @@
-data "openstack_networking_network_v2" "external" {
-  external = true
-}
+#data "openstack_networking_network_v2" "external" {
+#  external = true
+#}
 
 data "openstack_networking_network_v2" "network_id" {
   name = var.network_name
@@ -12,12 +12,12 @@ data "openstack_networking_network_v2" "lustre_network_id" {
 }
 
 # Floating IP (only create when unspecified)
-resource "openstack_networking_floatingip_v2" "floating_ip" {
-  count       = local.create_ip ? 1 : 0
-  address     = var.floating_ip
-  description = "${var.identifier}-spark"
-  pool        = data.openstack_networking_network_v2.external.name
-}
+#resource "openstack_networking_floatingip_v2" "floating_ip" {
+#  count       = local.create_ip ? 1 : 0
+#  address     = var.floating_ip
+#  description = "${var.identifier}-spark"
+#  pool        = data.openstack_networking_network_v2.external.name
+#}
 
 # Master port
 resource "openstack_networking_port_v2" "master" {

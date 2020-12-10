@@ -20,6 +20,10 @@ output "worker_ips" {
 
 ## Making this de.NBI compatible
 ## Uncomment above and comment below to revert
+#output "floating_ip" {
+#value = flatten(openstack_networking_port_v2.master.all_fixed_ips)
+#}
+
 output "floating_ip" {
-value = flatten(openstack_networking_port_v2.master.all_fixed_ips)
+value = openstack_networking_port_v2.master.all_fixed_ips[0]
 }

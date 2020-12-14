@@ -1,6 +1,6 @@
 resource "openstack_compute_instance_v2" "spark_master" {
   name        = "${local.name_prefix}-master"
-  image_name  = "0ab0d72a-d5de-41a7-a083-1e8c96328b34"
+  image_name  = "	Ubuntu 20.04 LTS 2020-07-07"
   flavor_name = "de.NBI medium"
   key_pair    = openstack_compute_keypair_v2.spark_keypair.id
 

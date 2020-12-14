@@ -1,7 +1,7 @@
 resource "openstack_compute_instance_v2" "spark_master" {
   name        = "${local.name_prefix}-master"
-  image_name  = var.image_name
-  flavor_name = var.flavor_name
+  image_name  = "Ubuntu 20.04 LTS 2020-07-07"
+  flavor_name = "de.NBI medium"
   key_pair    = openstack_compute_keypair_v2.spark_keypair.id
 
   network {

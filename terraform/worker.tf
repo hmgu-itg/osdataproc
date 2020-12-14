@@ -20,8 +20,8 @@ resource "openstack_compute_instance_v2" "spark_worker" {
   count = var.workers
 
   name        = format("${local.name_prefix}-worker-%02d", count.index + 1)
-  image_name  = 'Ubuntu 20.04 LTS 2020-07-07'
-  flavor_name = 'de.NBI medium'
+  image_name  = "Ubuntu 20.04 LTS 2020-07-07"
+  flavor_name = "de.NBI medium"
   key_pair    = openstack_compute_keypair_v2.spark_keypair.id
   user_data   = data.cloudinit_config.user_data.rendered
 
